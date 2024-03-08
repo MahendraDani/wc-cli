@@ -1,8 +1,10 @@
 #include <iostream>
+#include <fstream>
 
 #include "file_size.cpp"
 #include "file_lines.cpp"
 using namespace std;
+
 
 int main(int argc, char **argv) {
     string options[] = {"-c","-l","-w","-m"};
@@ -22,6 +24,12 @@ int main(int argc, char **argv) {
           cout << "-l: " << "To obtain number of lines in a file\n";
           cout << "-w: " << "To obtain number of words in a file\n";
           cout << "-m: " << "To obtain number of characters in a file\n";
+          return 1;
+        }
+
+        ifstream file(argv[2]); 
+        if(file.fail()){
+          cout << "Error: File not found, please enter a valid file name\n";
           return 1;
         }
         switch (ioptionc) {
