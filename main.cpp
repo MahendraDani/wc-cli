@@ -50,15 +50,21 @@ int main(int argc, char **argv) {
             break;
         }
 
-       // if(ioption==options[0]){
-        //  int size = file_size(argv[2]);
-         // cout << "Size of the file is: " << size << "\n";
-        //}else{
-         // cout << "incorrect option";
-        //}
        
-    }else{
-      cout << "At least three words required";
+    }else if(argc == 2){
+        string ifile_name(argv[1]);
+        ifstream file(ifile_name); 
+   
+        if(file.fail()){
+          cout << "Error: File not found, please enter a valid file name\n";
+          return 1;
+        }
+
+        cout << "File: " << ifile_name << "\n";
+        cout << "Size: " << file_size(ifile_name) << " bytes\n";
+        cout << "Lines: " << file_lines(ifile_name) << "\n";
+        cout << "Words: " << file_words(ifile_name) << "\n";
+        cout << "Characters: " << file_char(ifile_name) << "\n";
     }
     return 0;
 }
