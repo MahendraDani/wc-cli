@@ -1,6 +1,7 @@
 # wc-cli
 
 wc-cli is a minimal version of `wc` command. This project is developed as a hobby project, by referring to [Jhon Cricket's Coding Challenge](https://codingchallenges.fyi/challenges/challenge-wc). I will be improving this project even more in the near future, stay tuned!.
+Please watch the [demo video](https://www.loom.com/share/26df2225bd0c43b8a8084c19dd65d69e?sid=35dba2dc-32ff-43d8-b2c1-0fe8012d922d) to have a better understanding!
 
 # How to use
 
