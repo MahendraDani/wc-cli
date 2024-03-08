@@ -3,6 +3,8 @@
 
 #include "file_size.cpp"
 #include "file_lines.cpp"
+#include "file_words.cpp"
+
 using namespace std;
 
 
@@ -40,7 +42,7 @@ int main(int argc, char **argv) {
             cout << "Number of lines in the file " << argv[2] << " is: " << file_lines(argv[2]) << "\n";
             break;
           case 2:
-            cout << "Return number of words in the file";
+            cout << "Number of words in the file " << argv[2] << " is: " << file_words(argv[2]) << "\n";
             break;
           case 3:
             cout << "Return number of characters in a file";
