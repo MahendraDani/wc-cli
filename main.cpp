@@ -1,6 +1,7 @@
 #include <iostream>
+
 #include "file_size.cpp"
-#include <cstring>
+#include "file_lines.cpp"
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -28,7 +29,7 @@ int main(int argc, char **argv) {
             cout << "Size of the file " << argv[2] << " is: " << file_size(argv[2]) << "\n";
             break;
           case 1:
-            cout << "Return number of lines";
+            cout << "Number of lines in the file " << argv[2] << " is: " << file_lines(argv[2]) << "\n";
             break;
           case 2:
             cout << "Return number of words in the file";
