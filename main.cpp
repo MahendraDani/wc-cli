@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 #include "file_size.cpp"
 #include "file_lines.cpp"
@@ -22,7 +23,7 @@ int main(int argc, char **argv) {
         }
         
         if(ioptionc == -1){
-          cout << "Please enter a valid option\n";
+          cout << "Error: Please enter a valid option\n";
           cout << "-c: " << "To obtain file size\n";
           cout << "-l: " << "To obtain number of lines in a file\n";
           cout << "-w: " << "To obtain number of words in a file\n";
@@ -53,18 +54,36 @@ int main(int argc, char **argv) {
        
     }else if(argc == 2){
         string ifile_name(argv[1]);
-        ifstream file(ifile_name); 
-   
-        if(file.fail()){
-          cout << "Error: File not found, please enter a valid file name\n";
-          return 1;
-        }
 
-        cout << "File: " << ifile_name << "\n";
-        cout << "Size: " << file_size(ifile_name) << " bytes\n";
-        cout << "Lines: " << file_lines(ifile_name) << "\n";
-        cout << "Words: " << file_words(ifile_name) << "\n";
-        cout << "Characters: " << file_char(ifile_name) << "\n";
+        if(ifile_name=="help"){
+          cout << "\nwc-cli helps you to obtain details about any file!\n";
+
+          cout << "\n";
+
+          cout << "[Options]\n";
+          cout << "-c\tTo obtain size of the file\n";
+          cout << "-l\tTo obtaing total number of lines in the file\n";
+          cout << "-w\tTo obtain total number of words in the file\n";
+          cout << "-m\tTo obtain total number of characters in the file\n";
+
+          cout << "\n";
+
+          cout << "Example command\n";
+          cout << "./wc -l <path_of_file>\n";
+          cout << "\n";
+        }else{
+          ifstream file(ifile_name); 
+          if(file.fail()){
+            cout << "Error: File not found, please enter a valid file name\n";
+            return 1;
+          }
+
+          cout << "File: " << ifile_name << "\n";
+          cout << "Size: " << file_size(ifile_name) << " bytes\n";
+          cout << "Lines: " << file_lines(ifile_name) << "\n";
+          cout << "Words: " << file_words(ifile_name) << "\n";
+          cout << "Characters: " << file_char(ifile_name) << "\n";
+        }
     }
     return 0;
 }
